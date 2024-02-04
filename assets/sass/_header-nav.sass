@@ -1,0 +1,79 @@
+.header
+    display: flex
+    font-size: $text
+    flex-direction: column
+    align-items: flex-start
+    padding: 25px .3125rem
+    // margin-right: auto
+    background-color: $white
+    // position: fixed
+    // top: 0
+    // bottom: 0
+    // left: 0
+    &_name-logo
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 6px
+        user-select: none
+    &_name
+        font-weight: 500
+        font-size: $text
+        width: 100px
+
+.nav
+    padding: 1.7rem 0rem 1rem 0rem
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    gap: 1rem
+    &__link
+        padding: 6px 6px
+        display: flex
+        align-items: center
+        gap: 10px
+        cursor: pointer
+        fill: $blue
+        user-select: none
+        transition: 0.2s all
+        border-radius: .375rem
+        width: 7.1875rem
+        margin-right: auto
+        &:hover
+            color: $blue
+            background-color: #e7e7f792
+.groups-accordion
+    display: none
+    align-items: flex-start
+    list-style-type: none
+    &.active
+        display: flex
+        flex-direction: column
+    &__item
+        font-size: $small-text
+        margin-bottom: .5rem
+        transition: 0.2s all
+        fill: none
+        &:nth-last-child(1)
+            margin-bottom: 0rem
+        &:hover
+            color: $blue
+.column
+    flex-direction: column
+
+.nav__link:hover .icon
+    fill: $blue
+
+.my-btn
+    text-align: center
+    padding: 4px 1rem
+    background-color: $blue
+    border-radius: 8px
+    color: $white
+    letter-spacing: 0.6px
+    font-weight: 500
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
+.my-btn:hover
+    background-color: #5d8bff
+    color: $white

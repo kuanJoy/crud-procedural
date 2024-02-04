@@ -1,0 +1,82 @@
+.table
+    color: #484964
+    background-color: $bg
+    width: 100%
+    border-collapse: collapse
+    font-size: $small-text
+    &-content
+        background-color: $bg
+        width: 100%
+    &_row
+        font-size: .75rem
+    &_cell
+        padding: .2125rem
+        text-align: center
+        border: 1px solid rgba(204, 204, 204, 0.40)
+        max-width: 150px
+        overflow: hidden
+        text-overflow: ellipsis
+        word-wrap: break-word
+        &:first-child
+            border-left: none
+        &:last-child
+            border-right: none
+    &_block
+        border-bottom: 1px solid black
+
+.w-1
+    width: 1%
+
+// GROUPS
+.id
+    width: 5%
+    font-size: .625rem
+.group
+    width: 13%
+.year-graduate
+    width: 15%
+.btns-cell
+    width: 3%
+
+// USERS
+.name
+    width: 15%
+.surname
+    width: 17%
+.email
+    width: 23%
+
+// POSTS
+.post-desc
+    width: 30%
+
+.created-at
+    width: 7%
+.author
+    width: 8%
+
+.pagination
+    display: flex
+    grid-gap: 0.2rem
+    margin: 0 auto
+    font-size: 0.75rem
+    padding: .375rem
+.tfoot
+    border: 1px solid rgba(204, 204, 204, 0.40)
+    border-right: none
+    border-left: none
+
+.pagination a
+    padding: 1px 7px
+    border-radius: 50%
+
+.current-page
+    font-weight: 500
+    background-color: #4177FE
+    color: #fff
+    text-decoration: none
+    user-select: none
+    border-radius: 50%
+    padding: 1px 7px
+    &:hover
+        color: #fff

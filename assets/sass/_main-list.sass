@@ -1,0 +1,94 @@
+.quote-list
+    padding: .625rem
+    background-color: $bg
+    display: flex
+    flex-direction: column
+    border-radius: 1.25rem
+    width: 100%
+    max-width: 43.6875rem
+    align-self: flex-start
+    &__filter
+        padding: 0px 5px 5px 5px
+        border-bottom: 1px solid rgba(204, 204, 204, 0.4)
+        margin-bottom: .625rem
+        display: flex
+        justify-content: space-between
+        font-size: .8125rem
+.ql_card
+    font-size: $small-text
+    display: flex
+    gap: 1rem
+    border-radius: .625rem
+    background-color: $white
+    border: 1px solid rgba(204, 204, 204, 0.4)
+    box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.01)
+    margin-bottom: 1rem
+    overflow: hidden
+    &_photo
+        // max-width: 6.25rem
+        // height: 6.25rem
+        // object-fit: cover
+        max-width: 5.25rem
+        // height: 100%
+        object-fit: cover
+    &_content
+        padding: 10px 10px 10px 0px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: space-between
+        gap: 0.5rem
+        &__desc
+            font-weight: 400
+            line-height: 1.3rem
+            cursor: pointer
+            word-wrap: break-word
+            text-align: justify
+            font-size: $small-text
+            overflow: hidden
+            max-height: 9rem
+            &.active
+                max-height: none
+        &__info
+            display: flex
+            align-items: center
+            font-weight: 500
+            gap: 1rem
+            &_author
+                font-style: italic
+                position: relative
+                transition: 0.6s all
+                padding-left: 10px
+                cursor: pointer
+                &::before
+                    content: ""
+                    position: absolute
+                    height: .0938rem
+                    width: 8px
+                    background-color: $text-grey
+                    top: 50%
+                    left: 0px
+                &:hover
+                    text-decoration: underline
+            &_groups
+                text-transform: lowercase
+                font-weight: 300
+                font-size: $small-text
+
+.group
+    font-size: 13px
+    cursor: pointer
+    transition: 0.6s all
+    &:hover
+        text-decoration: underline
+
+.pagination-list
+    width: 100%
+    border-top: 1px solid rgba(204, 204, 204, 0.4)
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 0.4rem
+    margin: 0 auto
+    font-size: 0.75rem
+    padding: 10px 6px 0px 6px
