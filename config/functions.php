@@ -71,3 +71,16 @@ function validate_email()
         $errors['email'] = 'Некорректная почта;';
     }
 }
+
+function validate_pass()
+{
+    global $user_name;
+    global $password;
+    if (empty($password)) {
+        $errors["pass"] = "Введите пароль";
+    } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])(?=.*[!@#$%^&*])[0-9azA-Z!@#$%^&*]{6,20}$/u', $user_name))) {
+        $errors["pass"] = "Длина пароля 6 до 40 символов. Только на латинице. Используйте хотя бы 1 цифру + заглавную букву и спец символ";
+    } else {
+        $password = trim($password);
+    }
+}

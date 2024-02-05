@@ -29,14 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         validate_email();
 
-        if (empty($password)) {
-            $errors["pass"] = "Введите пароль";
-        } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])(?=.*[!@#$%^&*])[0-9azA-Z!@#$%^&*]{6,20}$/u', $user_name))) {
-            $errors["pass"] = "Длина пароля 6 до 40 символов. Разрешены a-z A-Z, Используйте цифру и спец символы";
-        } else {
-            $password = trim($password);
-        }
-
+        validate_pass();
 
         if (empty($id_role)) {
             $errors['role'] = 'Выберите роль';
