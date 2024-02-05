@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($group_name)) {
             $errors["name"] = "Введите группу";
         } elseif ((!preg_match('/^[\p{L}0-9 -]{3,40}$/u', $group_name))) {
-            $errors["name"] = "Некорректное название группы. Длина от 3 до 40 символов.";
+            $errors["name"] = "Некорректное название группы. Длина от 3 до 40 символов";
         } else {
             $group_name = trim($group_name);
         }
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($group_fullname)) {
             $errors["fullname"] = "Введите название";
         } elseif ((!preg_match('/^[\p{L}0-9 -]{3,40}$/u', $group_fullname))) {
-            $errors["fullname"] = "Некорректное название группы. Длина от 3 до 40 символов.";
+            $errors["fullname"] = "Некорректное название группы. Длина от 3 до 40 символов";
         } else {
             $group_fullname = trim($group_fullname);
         }

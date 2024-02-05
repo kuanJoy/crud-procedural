@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($post_desc)) {
             $errors["desc"] = "Описание не может быть пустым";
         } elseif ((!preg_match('/^.{3,4096}$/u', $post_desc))) {
-            $errors["desc"] = "Разрешается длина от 3 до 4096 символов.";
+            $errors["desc"] = "Разрешается длина от 3 до 4096 символов";
         } else {
             $post_desc = trim($post_desc);
         }

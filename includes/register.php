@@ -14,15 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($user_name)) {
             $errors["name"] = "Введите имя";
         } elseif ((!preg_match('/^[\p{L} -]{3,40}$/u', $user_name))) {
-            $errors["name"] = "Цифры в имени недопустимы. Длина от 3 до 40 символов.";
+            $errors["name"] = "Цифры в имени недопустимы. Длина от 3 до 40 символов";
         } else {
             $user_name = trim($user_name);
         }
 
         if (empty($user_surname)) {
-            $errors["surname"] = "Введите название;";
+            $errors["surname"] = "Введите название";
         } elseif ((!preg_match('/^[\p{L} -]{3,40}$/u', $user_surname))) {
-            $errors["surname"] = "Цифры в фамилии недопустимы. Длина от 3 до 40 символов;";
+            $errors["surname"] = "Цифры в фамилии недопустимы. Длина от 3 до 40 символов";
         } else {
             $user_surname = trim($user_surname);
         }
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($password)) {
             $errors["pass"] = "Введите пароль";
         } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])(?=.*[!@#$%^&*])[0-9azA-Z!@#$%^&*]{6,20}$/u', $user_name))) {
-            $errors["pass"] = "Длина пароля 6 до 40 символов. Разрешены a-z A-Z, Используйте цифру и спец символы;";
+            $errors["pass"] = "Длина пароля 6 до 40 символов. Разрешены a-z A-Z, Используйте цифру и спец символы";
         } else {
             $password = trim($password);
         }
@@ -84,9 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 }
             }
         } else {
-            echo "<script>
-        alert('Пароли не совпадают');
-    </script>";
+            $errors["pass_not_match"] = "Пароли не совпадают";
         }
     }
 }
