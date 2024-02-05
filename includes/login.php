@@ -5,11 +5,13 @@ if (isset($_SESSION['authorized'])) {
     header("Location: index.php");
     exit();
 }
-
+$errors = [];
 
 if (isset($_POST['login'])) {
     $email = clear_input($_POST['users']['email']);
     $password = clear_input($_POST['users']['pass']);
+
+    validate_email();
 
     $user = select_email($email);
     if ($user) {
@@ -30,11 +32,11 @@ if (isset($_POST['login'])) {
                     header("Location: index.php");
                     exit();
                 } else {
-                    $_POST['error_pass'] = "Неверный пароль";
+                    $errors['error_pass'] = "Неверный пароль";
                 }
             }
         } else {
-            $_POST['error_email'] = "Такой почты не существует";
+            $errors['error_email'] = "Такой почты не существует";
         }
     }
 }
@@ -47,16 +49,11 @@ if (isset($_POST['login'])) {
     if (isset($_SESSION['added'])) {
         echo "<span style='color:green'>{$_SESSION['added']}</span>";
     }
+    show_errors();
     ?>
     <form class="login" action="" method="post">
-        <?php if (isset($_POST['error_email'])) { ?>
-            <span class="alert"><?= $_POST['error_email']; ?></span>
-        <?php } ?>
         <label class="login__label" for="">Введите почту:</label>
         <input class="login__input" type="text" name="users[email]">
-        <?php if (isset($_POST['error_pass'])) { ?>
-            <span class="alert"><?= $_POST['error_pass']; ?></span>
-        <?php } ?>
         <label class="login__label" for="">Введите пароль:</label>
         <input class="login__input" type="password" name="users[pass]">
         <button type="submit" class="my-btn" name="login">Войти</button>

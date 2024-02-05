@@ -27,11 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $user_surname = trim($user_surname);
         }
 
-        if (empty($user_email)) {
-            $errors['email'] = 'Введите почту;';
-        } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Некорректная почта;';
-        }
+        validate_email();
 
         if (empty($password)) {
             $errors["pass"] = "Введите пароль";
@@ -167,11 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             </div>
             <?php
-            if (isset($errors)) {
-                foreach ($errors as $error) {
-                    echo "<span class='alert'>$error</span>";
-                }
-            }
+            show_errors();
             ?>
             <button class="my-btn" name="send" type="submit">Создать аккаунт</button>
         <?php } ?>

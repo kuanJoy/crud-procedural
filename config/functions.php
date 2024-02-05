@@ -60,3 +60,14 @@ function show_errors()
         }
     }
 }
+
+
+function validate_email()
+{
+    global $user_email;
+    if (empty($user_email)) {
+        $errors['email'] = 'Введите почту;';
+    } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Некорректная почта;';
+    }
+}

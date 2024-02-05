@@ -26,11 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $user_surname = trim($user_surname);
         }
 
-        if (empty($user_email)) {
-            $errors['email'] = 'Введите почту;';
-        } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Некорректная почта;';
-        }
+        validate_email();
 
         if (empty($password)) {
             $errors["pass"] = "Введите пароль";
