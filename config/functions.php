@@ -64,7 +64,7 @@ function show_errors()
 
 function validate_email()
 {
-    global $user_email;
+    global $user_email, $errors;
     if (empty($user_email)) {
         $errors['email'] = 'Введите почту;';
     } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
@@ -74,8 +74,7 @@ function validate_email()
 
 function validate_pass()
 {
-    global $user_name;
-    global $password;
+    global $errors, $user_name, $password;
     if (empty($password)) {
         $errors["pass"] = "Введите пароль";
     } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])(?=.*[!@#$%^&*])[0-9azA-Z!@#$%^&*]{6,20}$/u', $user_name))) {
