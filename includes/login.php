@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
     $email = clear_input($_POST['users']['email']);
     $password = clear_input($_POST['users']['pass']);
 
-    validate_email();
+    validate_email($errors, $email);
 
     if (empty($password)) {
         $errors["pass"] = "Введите пароль";
@@ -52,6 +52,7 @@ if (isset($_POST['login'])) {
     <?php
     if (isset($_SESSION['added'])) {
         echo "<span style='color:green'>{$_SESSION['added']}</span>";
+        unset($_SESSION['added']);
     }
     show_errors();
     ?>
