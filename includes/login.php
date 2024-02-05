@@ -13,30 +13,34 @@ if (isset($_POST['login'])) {
 
     validate_email();
 
-    $user = select_email($email);
-    if ($user) {
-        if ($row = mysqli_fetch_assoc($user)) {
-            if ($email == $row['email']) {
-                if (password_verify($password, $row['password'])) {
-                    $_SESSION['authorized'] = true;
-                    $_SESSION['id_user'] = $row['id_user'];
-                    $_SESSION['name'] = $row['name'];
-                    $_SESSION['surname'] = $row['surname'];
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['password'] = $row['password'];
-                    $_SESSION['photo'] = $row['photo'];
-                    $_SESSION['group'] = $row['group_name'];
-                    $_SESSION['year_graduate'] = $row['year_graduate'];
-                    $_SESSION['id_role'] = $row['id_role'];
-                    $_SESSION['added'] = null;
-                    header("Location: index.php");
-                    exit();
-                } else {
-                    $errors['error_pass'] = "Неверный пароль";
+    if (empty($password)) {
+        $errors["pass"] = "Введите пароль";
+    } else {
+        $user = select_email($email);
+        if ($user) {
+            if ($row = mysqli_fetch_assoc($user)) {
+                if ($email == $row['email']) {
+                    if (password_verify($password, $row['password'])) {
+                        $_SESSION['authorized'] = true;
+                        $_SESSION['id_user'] = $row['id_user'];
+                        $_SESSION['name'] = $row['name'];
+                        $_SESSION['surname'] = $row['surname'];
+                        $_SESSION['email'] = $row['email'];
+                        $_SESSION['password'] = $row['password'];
+                        $_SESSION['photo'] = $row['photo'];
+                        $_SESSION['group'] = $row['group_name'];
+                        $_SESSION['year_graduate'] = $row['year_graduate'];
+                        $_SESSION['id_role'] = $row['id_role'];
+                        $_SESSION['added'] = null;
+                        header("Location: index.php");
+                        exit();
+                    } else {
+                        $errors['error_pass'] = "Неверный пароль";
+                    }
                 }
+            } else {
+                $errors['error_email'] = "Такой почты не существует";
             }
-        } else {
-            $errors['error_email'] = "Такой почты не существует";
         }
     }
 }
