@@ -69,6 +69,7 @@ function validate_email($errors, $email)
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'Некорректная почта;';
     }
+    return $errors;
 }
 
 function validate_pass($errors, $password)
@@ -80,4 +81,5 @@ function validate_pass($errors, $password)
     } else {
         $password = trim($password);
     }
+    return $errors;
 }
