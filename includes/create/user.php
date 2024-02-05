@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $user_surname = trim($user_surname);
         }
 
-        validate_email($errors, $user_email);
+        $errors = validate_email($errors, $user_email);
 
-        validate_pass($errors, $password);
+        $errors = validate_pass($errors, $password);
 
 
         if (empty($id_role)) {

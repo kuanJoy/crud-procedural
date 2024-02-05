@@ -65,9 +65,9 @@ function show_errors()
 function validate_email($errors, $email)
 {
     if (empty($email)) {
-        $errors['email'] = 'Введите почту;';
+        $errors['email'] = 'Введите почту';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Некорректная почта;';
+        $errors['email'] = 'Некорректная почта';
     }
     return $errors;
 }
