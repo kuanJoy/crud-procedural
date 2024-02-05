@@ -4,7 +4,7 @@ if (isset($_POST['delete_all'])) {
     mysqli_query($connection, "SET FOREIGN_KEY_CHECKS=0");
     for ($i = 0; $i < count($_POST['checkbox']); $i++) {
         $id_group = intval($_POST['checkbox'][$i]);
-        $query_update = "UPDATE `users` SET `id_group` = 1 WHERE `id_group` = $id_group";
+        $query_update = "UPDATE `users` SET `id_group` = 0 WHERE `id_group` = $id_group";
         mysqli_query($connection, $query_update);
         $query_delete = "DELETE FROM `groups` WHERE `id_group` = $id_group;";
         mysqli_query($connection, $query_delete);
@@ -21,7 +21,7 @@ if (isset($_POST['delete_all'])) {
 if (isset($_GET['delete'])) {
     mysqli_query($connection, "SET FOREIGN_KEY_CHECKS=0");
     $one_post = $_GET['delete'];
-    $query_update = "UPDATE `users` SET `id_group` = 1 WHERE `id_group` = $one_post";
+    $query_update = "UPDATE `users` SET `id_group` = 0 WHERE `id_group` = $one_post";
     mysqli_query($connection, $query_update);
     mysqli_query($connection, "DELETE FROM groups WHERE id_group = $one_post");
     mysqli_query($connection, "SET FOREIGN_KEY_CHECKS=1");

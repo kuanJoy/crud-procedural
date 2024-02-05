@@ -28,8 +28,9 @@ CREATE TABLE IF NOT EXISTS `groups` (
   PRIMARY KEY (`id_group`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы quotebook.groups: ~21 rows (приблизительно)
+-- Дамп данных таблицы quotebook.groups: ~22 rows (приблизительно)
 INSERT INTO `groups` (`id_group`, `group_name`, `group_fullname`, `year_graduate`) VALUES
+	(0, 'без', 'группы', 2000),
 	(1, 'админы', 'Администраторы', 2000),
 	(2, 'СИТ-1', 'Специалист интернет технологий', 2024),
 	(3, 'СИТ-2', 'Специалист интернет технологий', 2024),
@@ -62,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   PRIMARY KEY (`id_post`),
   KEY `fk_posts_users` (`id_user`),
   CONSTRAINT `fk_posts_users` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы quotebook.posts: ~28 rows (приблизительно)
 INSERT INTO `posts` (`id_post`, `description`, `time`, `status`, `id_user`) VALUES
@@ -93,7 +94,8 @@ INSERT INTO `posts` (`id_post`, `description`, `time`, `status`, `id_user`) VALU
 	(29, 'Мне не стоит того. У меня кроме тебя больше ничего не осталось. Но у тебя всё ещё есть мечта, за которой стоит бороться. Мне нужно, чтобы ты её осуществил. Это моя мечта. Если честно, ничто другое никогда не имело значения', '2024-02-04 15:18:56', 'активен', 13),
 	(30, 'I Will Take You To The Moon My Self. I Promise', '2024-02-04 15:20:01', 'активен', 13),
 	(31, 'Don’t Make A Name For Yourself As A Cyberpunk By How You Live… Make A Name By How You Die', '2024-02-04 15:24:28', 'активен', 13),
-	(32, 'Единственная разница между плохим и хорошим днём - твоё отношение к нему', '2024-02-04 15:30:17', 'активен', 12);
+	(32, 'Единственная разница между плохим и хорошим днём - твоё отношение к нему', '2024-02-04 15:30:17', 'активен', 12),
+	(33, 'Спасибо За Внимание! <3', '2024-02-05 16:58:09', 'активен', 4);
 
 -- Дамп структуры для таблица quotebook.roles
 CREATE TABLE IF NOT EXISTS `roles` (
