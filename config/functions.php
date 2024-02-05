@@ -77,9 +77,8 @@ function validate_pass($errors)
     global $password;
     if (empty($password)) {
         $errors["pass"] = "Введите пароль";
-    } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[A-Z])[0-9azA-Z]{6,20}$/u', $password))) {
+    } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[A-Z])[0-9a-zA-Z]{6,20}$/u', $password))) {
         $errors["pass"] = "Длина пароля 6 до 20 символов. Только на латинице. Используйте хотя бы 1 цифру и заглавную букву";
-        var_dump($password);
     } else {
         $password = trim($password);
     }
