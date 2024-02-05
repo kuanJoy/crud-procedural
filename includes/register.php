@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $errors = validate_email($errors, $user_email);
 
-        $errors = validate_pass($errors, $password);
+        $errors = validate_pass($errors);
 
         if (empty($id_role)) {
             $errors['role'] = 'Выберите роль';

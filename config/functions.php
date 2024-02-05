@@ -72,12 +72,13 @@ function validate_email($errors, $email)
     return $errors;
 }
 
-function validate_pass($errors, $password)
+function validate_pass($errors)
 {
+    global $password;
     if (empty($password)) {
         $errors["pass"] = "Введите пароль";
     } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])[0-9azA-Z]{6,20}$/u', $password))) {
-        $errors["pass"] = "Длина пароля 6 до 40 символов. Только на латинице. Используйте хотя бы 1 цифру и заглавную букву";
+        $errors["pass"] = "Длина пароля 6 до 20 символов. Только на латинице. Используйте хотя бы 1 цифру и заглавную букву";
     } else {
         $password = trim($password);
     }
