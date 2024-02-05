@@ -62,23 +62,21 @@ function show_errors()
 }
 
 
-function validate_email()
+function validate_email($errors, $email)
 {
-    global $user_email, $errors;
-    if (empty($user_email)) {
+    if (empty($email)) {
         $errors['email'] = 'Введите почту;';
-    } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = 'Некорректная почта;';
     }
 }
 
-function validate_pass()
+function validate_pass($errors, $password)
 {
-    global $errors, $user_name, $password;
     if (empty($password)) {
         $errors["pass"] = "Введите пароль";
-    } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])(?=.*[!@#$%^&*])[0-9azA-Z!@#$%^&*]{6,20}$/u', $user_name))) {
-        $errors["pass"] = "Длина пароля 6 до 40 символов. Только на латинице. Используйте хотя бы 1 цифру + заглавную букву и спец символ";
+    } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])[0-9azA-Z]{6,20}$/u', $password))) {
+        $errors["pass"] = "Длина пароля 6 до 40 символов. Только на латинице. Используйте хотя бы 1 цифру и заглавную букву";
     } else {
         $password = trim($password);
     }
