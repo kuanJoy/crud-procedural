@@ -26,6 +26,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['group'] = $row['group_name'];
                     $_SESSION['year_graduate'] = $row['year_graduate'];
                     $_SESSION['id_role'] = $row['id_role'];
+                    $_SESSION['added'] = null;
                     header("Location: index.php");
                     exit();
                 } else {
@@ -43,8 +44,8 @@ if (isset($_POST['login'])) {
 <div class="register">
     <h3 class="register__title">Вход</h3>
     <?php
-    if (isset($_POST['added'])) {
-        echo $_POST['added'];
+    if (isset($_SESSION['added'])) {
+        echo "<span style='color:green'>{$_SESSION['added']}</span>";
     }
     ?>
     <form class="login" action="" method="post">

@@ -14,24 +14,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($user_name)) {
             $errors["name"] = "Введите имя";
         } elseif ((!preg_match('/^[\p{L} -]{3,40}$/u', $user_name))) {
-            $errors["name"] = "Некорректное название группы. Цифры недопустимы. Длина от 3 до 40 символов.";
+            $errors["name"] = "Цифры в имени недопустимы. Длина от 3 до 40 символов.";
         } else {
             $user_name = trim($user_name);
         }
 
         if (empty($user_surname)) {
-            $errors["surname"] = "Введите название";
+            $errors["surname"] = "Введите название;";
         } elseif ((!preg_match('/^[\p{L} -]{3,40}$/u', $user_surname))) {
-            $errors["surname"] = "Некорректное название группы. Цифры недопустимы. Длина от 3 до 40 символов.";
+            $errors["surname"] = "Цифры в фамилии недопустимы. Длина от 3 до 40 символов;";
         } else {
             $user_surname = trim($user_surname);
         }
 
         if (empty($user_email)) {
-            $errors['email'] = 'Введите почту';
+            $errors['email'] = 'Введите почту;';
         } elseif (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Некорректная почта';
+            $errors['email'] = 'Некорректная почта;';
         }
+
+        if (empty($password)) {
+            $errors["pass"] = "Введите пароль";
+        } elseif ((!preg_match('/^(?=.*[0-9])(?=.*[AZ])(?=.*[!@#$%^&*])[0-9azA-Z!@#$%^&*]{6,20}$/u', $user_name))) {
+            $errors["pass"] = "Длина пароля 6 до 40 символов. Разрешены a-z A-Z, Используйте цифру и спец символы;";
+        } else {
+            $password = trim($password);
+        }
+
 
         if (empty($id_role)) {
             $errors['role'] = 'Выберите роль';
@@ -71,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $params = ["sssssi", $user_name, $user_surname, $user_email, $hash_password, $img_upload_path, intval($id_group)];
                 $result_insert_user = executeQuery($connection, $insert_user, $params);
                 if ($result_insert_user) {
-                    $_POST['added'] = "Аккаунт успешно создан";
+                    $_SESSION['added'] = "Аккаунт успешно создан";
                     header("Location: ./login.php");
                     exit();
                 } else {

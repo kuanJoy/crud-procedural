@@ -709,6 +709,7 @@ select:focus {
   box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.01);
   align-self: flex-start;
   width: 50%;
+  text-align: center;
 }
 .register__title {
   text-align: center;
@@ -731,6 +732,7 @@ select:focus {
 }
 .login__label {
   font-weight: 500;
+  text-align: left;
 }
 .login__input {
   padding: 0.625rem;
