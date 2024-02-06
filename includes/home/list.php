@@ -96,7 +96,7 @@
             }
         }
 
-        pagination($result_limit, $total_pages, check_get());
+        pagination($num_rows, $total_pages, check_get());
         ?>
     </div>
 </div>

@@ -226,7 +226,7 @@ if ($result_select_user = mysqli_query($connection, $select_user)) {
             <?php
             // must have isset для profile.php
             if (isset($total_pages)) {
-                pagination($result_select_posts, $total_pages, "/profile.php?page");
+                pagination($num_rows, $total_pages, "/profile.php?page");
             }
             ?>
         </div>
