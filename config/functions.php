@@ -36,9 +36,9 @@ function execute_query($connect, $query, $params = null)
 
 
 
-function pagination($query, $total_pages, $link)
+function pagination($total_rows, $total_pages, $link)
 {
-    if (mysqli_num_rows($query) > 1) {
+    if ($total_rows > 1) {
         global $page;
         for ($i = 1; $i <= $total_pages; $i++) {
             if ($i == $page) {
@@ -49,6 +49,7 @@ function pagination($query, $total_pages, $link)
         }
     }
 }
+
 
 
 function show_errors()

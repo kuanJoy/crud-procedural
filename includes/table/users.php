@@ -253,7 +253,7 @@ show_errors();
                     </th>
                     <th class="pagination">
                         <?php
-                        pagination($result_limit, $total_pages, "/table.php?table=users&page");
+                        pagination($num_rows, $total_pages, "/table.php?table=users&page");
                         ?>
                     </th>
                 </tr>
