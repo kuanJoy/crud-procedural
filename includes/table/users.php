@@ -9,7 +9,9 @@ if (isset($_POST['delete_all'])) {
         $result_get_photo_to_del = mysqli_query($connection, $get_photo_to_del);
         $row_pic = mysqli_fetch_assoc($result_get_photo_to_del);
         $picture_path = $row_pic['photo'];
-        unlink($picture_path);
+        if ($picture_path !== "./assets/images/upload/default_ava.jpg") {
+            unlink($picture_path);
+        }
 
         $query_update = "UPDATE `posts` SET `id_user` = 1 WHERE `id_user` = $id_user";
         mysqli_query($connection, $query_update);

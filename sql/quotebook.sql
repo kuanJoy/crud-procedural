@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id_user`, `name`, `surname`, `email`, `password`, `photo`, `id_group`, `id_role`) VALUES
 	(1, 'удалённый', 'пользователь', 'none@none.com', '$2y$10$bx6bK2Qmd5Q.91J.VGCBeOK6naROIvOG5o9DOCuR9YmX/fFDo6O5y', './assets/images/upload/default_ava.jpg', 1, 3),
 	(2, 'admin', 'admin', 'admin@admin.com', '$2y$10$l.85PBemH4oCsxWzP2nTne6.lFry9KD1YgIeXmgY.ig/JfVb1jjoW', './assets/images/upload/admin@admin.com65bc82ca71a4a1.71251202.png', 1, 1),
-	(4, 'Куанышбек', 'Мыкыев', 'kuanyshmykyev@gmail.com', '$2y$10$o/egMQR6/aQoawvcFG.o/u5.Nt2Oa8P3SPqzCP.TfB0ikKyIAja.6', './assets/images/upload/kuanyshmykyev@gmail.com65bc824059d147.33191273.png', 2, 2),
+	(4, 'Куанышбек', 'Мыкыев', 'kuanyshmykyev@gmail.com', '$2y$10$o/egMQR6/aQoawvcFG.o/u5.Nt2Oa8P3SPqzCP.TfB0ikKyIAja.6', './assets/images/upload/kuanyshmykyev@gmail.com65c0b8db93a770.76230556', 2, 2),
 	(5, 'Губка', 'Боб', 'spongebob@gmail.com', '$2y$10$jHCJcxpeMZapRDTlE2sI8.ZylLeRTXChU62yFvZ1186vL8Jz0xyGC', './assets/images/upload/spongebob@gmail.com65bc8255468b45.96113106.jpg', 8, 3),
 	(6, 'Алиса', 'Соколова', 'testgirl@gmail.com', '$2y$10$rcTxhKbKoDAQCIcT3AcBI.59GQHEzF//c3h.V2mJOgVHvTCto.AKe', './assets/images/upload/testgirl@gmail.com65bc826c8f3300.01544962.jpg', 16, 3),
 	(7, 'Артём', 'Дроздов', 'test@gmail.com', '$2y$10$4wc2etmuOB.C/CT.yR1k2.a5FHyyn61qpk4n95fo6xs9f2.GDCEBK', './assets/images/upload/test@gmail.com65bc82fa2f7cc4.88102374.png', 16, 3),
