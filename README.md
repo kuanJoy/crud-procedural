@@ -1,5 +1,5 @@
 ### CRUD Quotebook
-This is a simple CRUD application created using a procedural approach. It was developed before I learned about PDO, OOP, PSR, and MVC. Therefore, please note that this project may NOT meet good practices or standards for appropriate development, as it was made for educational purposes at the start of my learning journey.
+This is a simple CRUD application created using a procedural approach. It was developed before I learned about PDO, OOP, PSR and MVC. Therefore, please note that this project may NOT meet good practices or standards for appropriate development, as it was made for educational purposes at the start of my learning journey.
 
 ## Video demo🎞️
 [Watch the video](https://www.youtube.com/watch?v=vnQxs5YnnW0)
