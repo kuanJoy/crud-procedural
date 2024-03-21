@@ -1,5 +1,5 @@
 ### CRUD Quotebook
-This is a simple CRUD application created using a procedural approach. It was developed before I learned about PDO, OOP, PSR and MVC. Therefore, please note that this project may NOT meet good practices or standards for appropriate development, as it was made for educational purposes at the start of my learning journey.
+Multiple Table CRUD with sorting, filtering and validation features in admin panels, news and profile pages. Simple login/signup. Procedural style.
 
 ## Video demo🎞️
 [Watch the video](https://www.youtube.com/watch?v=vnQxs5YnnW0)
@@ -11,5 +11,6 @@ This is a simple CRUD application created using a procedural approach. It was de
 * Sorting & filtering (in admin panel and home page)
 
 ### Notes
+* This is a simple CRUD application created using a procedural approach. It was developed before I learned about PDO, OOP, PSR and MVC. Therefore, please note that this project may NOT meet good practices or standards for appropriate development, as it was made for educational purposes at the start of my learning journey.
 * The "sql" folder contains global queries to create the database, tables and test rows. 
 (NOTE: groups.id_group = 0 and users.id_user = 1 and 2 shouldn't be deleted for correct data displaying)
